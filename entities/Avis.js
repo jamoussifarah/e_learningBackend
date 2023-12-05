@@ -1,4 +1,4 @@
-class Profs {
+class Avis {
   constructor(profession,name,imgSrc) {
     this.profession = profession;
     this.imgSrc = imgSrc;
@@ -7,4 +7,4 @@ class Profs {
   }
 }
 
-export default Profs;
+export default Avis;

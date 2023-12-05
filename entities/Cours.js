@@ -1,5 +1,5 @@
 class Cours {
-  constructor(id, heading, heading2, imgSrc, name, students, price, rating) {
+  constructor(id, heading, heading2, imgSrc, name, students, price, rating,classes) {
     this.id = id;
     this.heading = heading;
     this.heading2 = heading2;
@@ -8,6 +8,7 @@ class Cours {
     this.students = students;
     this.price = price;
     this.rating = rating;
+    this.classes = classes;
   }
 }
 
