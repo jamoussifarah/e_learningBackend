@@ -14,7 +14,7 @@ const participantSchema = new mongoose.Schema({
     type: String,
     required: true,
     validate: {
-      validator: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
+      validator: value => /^(?=.*[A-Za-z])(?=.*\d).{8,}$/.test(value),
       message: props => `Le mot de passe doit contenir au moins 8 caractères, dont au moins une lettre et un chiffre.`
     }
   },
