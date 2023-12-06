@@ -58,6 +58,9 @@ router.put('/:id', async (req, res) => {
 
 
 
+
+
+
 router.delete('/:id', async (req, res) => {
   const partiName = req.params.id;
   try {

@@ -19,6 +19,8 @@ const upload = multer({ storage });
 
 const profController = express.Router();
 
+
+
 profController.post(
   '/register',
   upload.single('image'),
