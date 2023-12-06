@@ -39,6 +39,7 @@ class ProfService {
       const newParticipant = new ParticipantModel({
         email: userData.email,
         password: hashedPassword,
+        name:userData.name
       });
 
       await newParticipant.save();
@@ -122,12 +123,7 @@ class ProfService {
   }
 }
 
-
-
-
 }
-
-
 
 
 export default new ProfService();
