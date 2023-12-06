@@ -104,9 +104,9 @@ class ProfService {
   }
 
   // Supprimer un professeur par ID
-  async deleteProfById(profId) {
+  async deleteParticipantById(partifId) {
     try {
-      const deletedProf = await ParticipantModel.findByIdAndDelete(profId);
+      const deletedProf = await ParticipantModel.findByIdAndDelete(partifId);
       return deletedProf;
     } catch (error) {
       console.error('Erreur lors de la suppression du professeur par ID:', error);

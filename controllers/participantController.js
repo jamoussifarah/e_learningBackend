@@ -58,15 +58,12 @@ router.put('/:id', async (req, res) => {
 
 
 
-
-
-
 router.delete('/:id', async (req, res) => {
   const partiName = req.params.id;
   try {
-    const deletedParti = await ParticipantService.deleteProfById(partiName);
+    const deletedParti = await ParticipantService.deleteParticipantById(partiName);
     console.log("jhuhuh")
-    if (!deletedProf) {
+    if (!deletedParti) {
       return res.status(404).json({ error: 'Participant non trouvé.' });
     }
     res.json(deletedParti);
