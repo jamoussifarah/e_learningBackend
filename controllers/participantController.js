@@ -46,13 +46,13 @@ router.put('/:id', async (req, res) => {
   const profId = req.params.id;
   const updatedProfData = req.body;
   try {
-    const updatedProf = await ParticipantService.updateProfById(profId, updatedProfData);
+    const updatedProf = await ParticipantService.updatePartifById(profId, updatedProfData);
     if (!updatedProf) {
-      return res.status(404).json({ error: 'Professeur non trouvé.' });
+      return res.status(404).json({ error: 'Participant non trouvé.' });
     }
     res.json(updatedProf);
   } catch (error) {
-    res.status(500).json({ error: 'Erreur lors de la mise à jour du professeur.' });
+    res.status(500).json({ error: 'Erreur lors de la mise à jour du Participant.' });
   }
 });
 

@@ -2,7 +2,7 @@ import ParticipantModel from '../models/participantModel.js';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
-class ProfService {
+class ParticipantService {
   // Récupérer tous les professeurs
   async getAllProfs() {
     try {
@@ -90,9 +90,11 @@ class ProfService {
   }
 
   // Mettre à jour un professeur par ID
-  async updateProfById(profId, updatedProfData) {
+  async updatePartifById(partifId, updatedPartiData) {
     try {
-      const updatedProf = await ParticipantModel.findByIdAndUpdate(profId, updatedProfData, {
+      const hashedPassword = await bcrypt.hash(updatedPartiData.password, 10);
+      updatedPartiData.password = hashedPassword;
+      const updatedProf = await ParticipantModel.findByIdAndUpdate(partifId, updatedPartiData, {
         new: true,
         runValidators: true,
       });
@@ -126,4 +128,4 @@ class ProfService {
 }
 
 
-export default new ProfService();
+export default new ParticipantService();
